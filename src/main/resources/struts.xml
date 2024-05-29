@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+   
+    <constant name="struts.devMode" value="true"/>
+
+    <!-- include file="example.xml"/ -->
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+        
+        <action name="index">
+            <result>index.jsp</result>
+        </action>
+
+		<action name="loginAction" class="com.samanecorp.struts1.controller.LoginAction" method="login">
+			<result name="login">index.jsp</result>
+			<result name="welcome" type="redirectAction">
+				<param name="actionName">welcomeAction</param>
+			</result>
+		</action>
+		
+		<action name="logoutAction" class="com.samanecorp.struts1.controller.LoginAction" method="logout">
+			<result name="logout">index.jsp</result>
+		</action>
+		
+		<action name="welcomeAction" class="com.samanecorp.struts1.controller.WelcomeAction" method="welcome">
+			<result name="welcome">welcome.jsp</result>
+		</action>
+		
+		<action name="employeesAction" class="com.samanecorp.struts1.controller.EmployeesAction" method="getAll">
+			<result name="employees">/WEB-INF/jsp/employees.jsp</result>
+		</action>
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>

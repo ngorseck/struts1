@@ -34,6 +34,12 @@
 		<action name="employeesAction" class="com.samanecorp.struts1.controller.EmployeesAction" method="getAll">
 			<result name="employees">/WEB-INF/jsp/employees.jsp</result>
 		</action>
+		<action name="employeesEditAction" class="com.samanecorp.struts1.controller.EmployeesAction" method="edit">
+			<result name="employees">/WEB-INF/jsp/employees.jsp</result>
+		</action>
+		<action name="employeesDeleteAction" class="com.samanecorp.struts1.controller.EmployeesAction" method="delete">
+			<result name="employees">/WEB-INF/jsp/employees.jsp</result>
+		</action>
     </package>
 
     <!-- Add addition packages and configuration here. -->

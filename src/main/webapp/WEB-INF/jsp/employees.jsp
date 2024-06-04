@@ -1,6 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +11,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<table classe="table">
+		<jsp:include page="../../welcome.jsp"></jsp:include>
+		<table class="table">
             <tr>
                 <td>Full name</td>
                 <td>Email</td>
@@ -24,7 +26,7 @@
 	                <td><s:property value="#employees.email"/></td>
 	                <td><s:property value="#employees.password"/></td>
 	                <td>
-	                    <s:url var="edit" action="employeesAction" method="edit">
+	                    <s:url var="edit" action="employeesEditAction" method="edit">
 	                        <s:param name="emailEdit">
 	                            <s:property value="#employees.email"/>
 	                        </s:param>
@@ -32,7 +34,7 @@
 	                    <s:a href="%{#edit}">Lien edit</s:a>
 	                </td>
 	                <td>
-	                    <s:url var="delete" action="employeesAction" method="delete">
+	                    <s:url var="delete" action="employeesDeleteAction" method="delete">
 	                        <s:param name="emailDelete">
 	                            <s:property value="#employees.email"/>
 	                        </s:param>

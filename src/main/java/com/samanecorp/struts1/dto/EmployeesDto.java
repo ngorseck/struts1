@@ -1,12 +1,19 @@
 package com.samanecorp.struts1.dto;
 
-public class EmployeesDto {
+import java.io.Serializable;
+
+public class EmployeesDto implements Serializable {
 
     private String fullName;
     private String email;
     private String password;
 
-    public EmployeesDto(String fullName, String mail, String passer) {
+    
+    public EmployeesDto() {
+		super();
+	}
+
+	public EmployeesDto(String fullName, String mail, String passer) {
     	this.fullName = fullName;
         this.email = mail;
         this.password = passer;
